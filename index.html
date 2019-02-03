@@ -1,41 +1,797 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    <title>Document</title>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	GetDocsNow.com - HOA Resale Docs
+</title><link href="styles.css" rel="stylesheet" /><link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" /><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet" />
+     <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/woco.accordion.min.js"></script>
+    <script src="/js/holidayNoticeAndLogo.js"></script>
+
+    <script type="text/javascript">
+        function TestimonialClick()
+        {
+            if (window.location.href.indexOf('Default.aspx') > -1)
+            {
+                document.getElementById("aTestimonials").setAttribute('class', 'selected');
+                document.getElementById("liTestimonials").setAttribute('class', 'selected');
+                window.scrollTo(0, 0);
+                document.getElementById("liHome").setAttribute('class', '');
+                document.getElementById("aHome").setAttribute('class', '');
+                document.getElementById("liAbout").setAttribute('class', '');
+                document.getElementById("aAbout").setAttribute('class', '');
+                document.getElementById("liProducts").setAttribute('class', '');
+                document.getElementById("aProducts").setAttribute('class', '');
+                document.getElementById("liContact").setAttribute('class', '');
+                document.getElementById("aContact").setAttribute('class', '');
+                document.getElementById("liFaq").setAttribute('class', '');
+                document.getElementById("aFaq").setAttribute('class', '');
+            }
+            else
+            {
+                //alert('2');
+                window.location.href = 'Default.aspx#TESTIMONIALS';
+
+            }
+        }
+        function selfHyperLinkClick()
+        {
+            window.scrollTo(0, 0);
+            document.getElementById("aTestimonials").setAttribute('class', '');
+            document.getElementById("liTestimonials").setAttribute('class', '');
+            document.getElementById("liHome").setAttribute('class', '');
+            document.getElementById("aHome").setAttribute('class', '');
+            document.getElementById("liAbout").setAttribute('class', '');
+            document.getElementById("aAbout").setAttribute('class', '');
+            document.getElementById("liProducts").setAttribute('class', '');
+            document.getElementById("aProducts").setAttribute('class', '');
+            document.getElementById("liContact").setAttribute('class', '');
+            document.getElementById("aContact").setAttribute('class', '');
+            document.getElementById("liFaq").setAttribute('class', '');
+            document.getElementById("aFaq").setAttribute('class', '');
+
+
+            if (window.location.href.indexOf('Default.aspx') > -1)
+            {
+                if (window.location.hash == '#TESTIMONIALS')
+                {                    
+                    document.getElementById("aTestimonials").setAttribute('class', 'selected');
+                    document.getElementById("liTestimonials").setAttribute('class', 'selected');                    
+
+                }
+                else if (window.location.hash == "#CONTACT") {
+                    //alert('contact!');
+
+                    document.getElementById("liContact").setAttribute('class', 'selected');
+                    document.getElementById("aContact").setAttribute('class', 'selected');
+
+                }
+                else if (window.location.hash == "#FAQ") {
+                    //alert('faq!');
+
+                    document.getElementById("liFaq").setAttribute('class', 'selected');
+                    document.getElementById("aFaq").setAttribute('class', 'selected');
+
+                }
+                else if (window.location.hash == "#PRODUCTS") {
+                    //alert('products!');
+                    document.getElementById("liProducts").setAttribute('class', 'selected');
+                    document.getElementById("aProducts").setAttribute('class', 'selected');
+
+                }
+                else if (window.location.hash == "#ABOUT") {
+                    //alert('about us!');
+                    document.getElementById("liAbout").setAttribute('class', 'selected');
+                    document.getElementById("aAbout").setAttribute('class', 'selected');
+
+                }
+                else {
+                    //alert('home!');
+                    document.getElementById("liHome").setAttribute('class', 'selected');
+                    document.getElementById("aHome").setAttribute('class', 'selected');
+
+                }
+            }
+            else
+            {
+                if (window.location.hash == '#TESTIMONIALS') {
+                    window.location.href = 'Default.aspx#TESTIMONIALS';
+                }
+                else if (window.location.hash == "#CONTACT") {
+                    window.location.href = 'Default.aspx#CONTACT';
+                }
+                else if (window.location.hash == "#FAQ") {
+                    window.location.href = 'Default.aspx#FAQ';
+                }
+                else if (window.location.hash == "#PRODUCTS") {
+                    window.location.href = 'Default.aspx#PRODUCTS';
+                }
+                else if (window.location.hash == "#ABOUT") {
+                    window.location.href = 'Default.aspx#ABOUT';
+                }
+                else {
+                    window.location.href = 'Default.aspx#HOME';
+                }
+            }
+        }
+    </script>
+
+    
+    <script type="text/javascript">
+        window.onload = function () {
+            if (window.location.hash) {
+                // Fragment exists
+                //alert('hash yo' + window.location.hash);
+                document.getElementById("aTestimonials").setAttribute('class', '');
+                document.getElementById("liTestimonials").setAttribute('class', '');
+                document.getElementById("liHome").setAttribute('class', '');
+                document.getElementById("aHome").setAttribute('class', '');
+                document.getElementById("liAbout").setAttribute('class', '');
+                document.getElementById("aAbout").setAttribute('class', '');
+                document.getElementById("liProducts").setAttribute('class', '');
+                document.getElementById("aProducts").setAttribute('class', '');
+                document.getElementById("liContact").setAttribute('class', '');
+                document.getElementById("aContact").setAttribute('class', '');
+                document.getElementById("liFaq").setAttribute('class', '');
+                document.getElementById("aFaq").setAttribute('class', '');
+
+                
+                if (window.location.hash == '#TESTIMONIALS')
+                {                    
+                    document.getElementById("aTestimonials").setAttribute('class', 'selected');
+                    document.getElementById("liTestimonials").setAttribute('class', 'selected');                    
+
+                }
+                else if (window.location.hash == "#CONTACT") {
+                    //alert('contact!');
+
+                    document.getElementById("liContact").setAttribute('class', 'selected');
+                    document.getElementById("aContact").setAttribute('class', 'selected');
+
+                }
+                else if (window.location.hash == "#FAQ") {
+                    //alert('faq!');
+
+                    document.getElementById("liFaq").setAttribute('class', 'selected');
+                    document.getElementById("aFaq").setAttribute('class', 'selected');
+
+                }
+                else if (window.location.hash == "#PRODUCTS") {
+                    //alert('products!');
+                    document.getElementById("liProducts").setAttribute('class', 'selected');
+                    document.getElementById("aProducts").setAttribute('class', 'selected');
+
+                }
+                else if (window.location.hash == "#ABOUT") {
+                    //alert('about us!');
+                    document.getElementById("liAbout").setAttribute('class', 'selected');
+                    document.getElementById("aAbout").setAttribute('class', 'selected');
+
+                }
+                else {
+                    //alert('home!');
+                    document.getElementById("liHome").setAttribute('class', 'selected');
+                    document.getElementById("aHome").setAttribute('class', 'selected');
+
+                }
+            }
+        }
+    </script>
 </head>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#"><img src="https://www.getdocsnow.com/images/logo.png" alt="logo"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <button><a class="nav-link" href="#">Start Here <span class="sr-only">(current)</span></a></button>
-            </li>
-            <li class="nav-item">
-              <button><a class="nav-link" href="#">Pay for Order</a></button>
-            </li>
-            <li class="nav-item">
-              <button><a class="nav-link" href="#">Order Status</a></button>
-            </li>
-            <li class="nav-item">
-              <button><a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Member Login</a></button>
-            </li>
-          </ul>
+<body>
+    <form action="https://app.hatchbuck.com/onlineForm/submit.php" method="post" name="form_73054643368" accept-charset="utf-8">
+
+<div class="header">
+<div class="container">
+<div class="logo" id="MainLogo">
+<a href="/Default.aspx">
+    <img src="images/logo.png" align="right" id="theLogo">
+    
+</a>
+</div>
+
+<div class="call">
+
+
+<div class="login">
+<h1><i class="fa fa-phone" aria-hidden="true"></i> (800) 353-2939</h1>
+&nbsp;&nbsp;&nbsp;&nbsp;<span><a href="https://members.getdocsnow.com/Login.aspx">member login</a></span>
+</div>
+<div class="member">
+<a href="StartHere.aspx">start here</a>
+<a href="https://members.getdocsnow.com/OrderSelectPayThirdparty.aspx" class="PayButton">pay for an order</a>
+<a href="https://members.getdocsnow.com/OrderStatus.aspx">order status</a>
+</div>
+</div>
+
+
+</div>
+</div>
+
+<div class="banner">
+<div class="container" style="min-height:769px; padding: 10px 10px 10px 10px;">
+
+        
+
+    <div id="divOfficeClosure" style="visibility:hidden; text-align:center; margin:auto; background: rgba(255, 255, 255, .70); padding:10px 10px;">
+        <h3 style="color:red; font-weight:bold;">
+            <asp:Label ID="lblHolidayNotice"></asp:Label>
+        </h3>
+    </div>
+
+    <div class="cd-tabs">
+	    <nav>
+		    <ul class="cd-tabs-navigation">
+			    <li><a id="aHome" data-content="inbox" class="selected" href="#0">HOME</a></li>
+			    <li><a id="aAbout" data-content="new" href="#ABOUT-US">ABOUT US</a></li>
+			    <li><a id="aProducts" data-content="gallery" href="#PRODUCTS">PRODUCTS</a></li>
+			    <li><a id="aContact" data-content="settings" href="#CONTACT">CONTACT</a></li>
+			    <li><a id="aTestimonials" data-content="last" href="#TESTIMONIALS">TESTIMONIALS</a></li>
+		    </ul> <!-- cd-tabs-navigation -->
+	    </nav>
+
+	    <ul class="cd-tabs-content">
+        <div class="disc">
+		    <li id="liHome" data-content="inbox" class="selected">
+    <div class="content">
+    
+         
+         <div class="homecontent">
+         <h1 class="header-line">All your HOA Resale Documents</h1>
+         
+         <p>With GetDocsNow.com you have the ability to view all documents, Create/Edit Condo Questionnaires and respond to escrow demands all in one convenient online process.</p>
+         <ul class="p-list">
+              <li>Resale Document Sets</li>
+              <li>Resale Certificates</li>
+              <li>Condo Questionnaires</li>
+              <li>Escrow Demands / Estoppels / Closing Statements</li>
+         </ul>
+         
+         <h1 class="header-line">Be compliant with your States Laws</h1>
+    
+          <ul class="p-list">
+         <li>State Specific Resale Document Sets</li>
+          <li>State Resale Certificates</li>
+         </ul>
+         <a class="btn" href="hoa-management-company.aspx">learn more</a>
+         
+         <h2>SO YOU CAN WORK <span>FASTER AND SMARTER.</span> NOT HARDER.</h2>
+      
+         
+         </div>
+                    <div class="partner">
+<h1 class="header-line1">We are Partnered with</h1>
+
+<div class="company">
+<div class="companyicon"><a href="http://www.calibersoftware.com/"><img src="images/c.png" alt="image"></a></div>
+<div class="companyicon"><a href="http://www.topssoft.com/"><img src="images/t.png" alt="image"></a></div>
+<div class="companyicon"><a href="http://www.villagemanagementsoftware.com/"><img src="images/v.png" alt="image"></a></div>
+</div>
+</div>
+         
+       </div>
+		</li>
+
+		<li id="liAbout" data-content="new">
+			<div class="content">
+        <div class="homecontent">
+         <h1 class="header-line">About Us</h1>
+
+            <div class="content-inner">
+                <p>
+
+                    GetDocsNow.com was created by Real Estate brokers who wanted a better way
+
+                    to obtain resale documents. Joe Russo was driving across Vegas one day to get
+
+                    the resale documents for a real estate transaction he was working on. He drove
+
+                    all the way to the other end of the valley to deliver them and thought: “there has
+
+                    to be a better way”.<!--Luckily for GetDocsNow.com, Al Gore had recently invented
+
+                    the internet.--> And this brilliant idea turned into a business plan in 1999. We
+
+                    believe that our background in real estate makes our site more functional and
+
+                    user friendly than any other service out there.
+
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+
+                    In 1999 The Russo Group set out to build an online utility website to provide a
+
+                    variety of document disclosures. The creators of GetDocsNow.com , The Russo
+
+                    Group, searched for the best programmers and online engineers to put together
+
+                    this outstanding service. GetDocsNow.com has continued to thrive and grow
+
+                    since its inception and expand into the robust website it is today. The best in the
+
+                    community management industry.
+
+                </p>
+            </div>
+
+
+            <div class="content-inner">
+                <p>
+
+                    The Russo Group and GetDocsNow.com strive to provide the best experience
+
+                    possible for both our clients and our users.
+
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+
+                    For security and protection we use <a class="h-link" href="http://www.authorize.net/" target="_blank">Authorize.net</a> to manage our transactions &amp;
+
+                    help prevent fraud. You can have confidence our transactions are being
+
+                    processed according to the highest security standards.
+
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+
+                    It is our commitment to keep expanding and improving the services for the GetDocsNow.com clients.
+
+                </p>
+            </div>
+
+            <!--
+            <div class="content-inner">
+                <p>
+                    GetDocsNow.com was created by Real Estate brokers who wanted a better way to obtain resale documents. Joe Russo was driving across Vegas one day to get the resale docs to drive all the way to the other end of the valley to deliver them and thought: “there has to be a better way”. Luckily for GetDocsNow.com, Al Gore had recently invented the internet. And this brilliant idea turned into a business plan in 1999. We believe that our background in real estate makes our site more functional and user friendly than any other service out there.
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+                    In 1999 we set out to build an online utility website to provide a variety of document disclosures. The creators of GetDocsNow.com searched for the best programmers and online engineers to put together this outstanding service. GetDocsNow.com has continued to thrive since its inception and grow and expand into the robust website it is today.  The best in the industry.
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+                    We strive to provide the best experience possible for both our clients and our users.
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+                    For security and protection we use <a class="h-link" href="http://www.authorize.net/" target="_blank">Authorize.net</a> to manage our transactions & help prevent fraud. You can have confidence our transactions are being processed according to the highest security standards.
+                </p>
+            </div>
+
+            <div class="content-inner">
+                <p>
+                    It is our commitment to keep expanding and improving the services for the GetDocsNow.com clients.
+                </p>
+            </div>
+
+            -->
+
+
+            <!--
+         <div class="content-inner">
+         <p><span><a href="#">GetDocsNow.com</a></span> was created by Real Estate brokers who wanted a better way to obtain resale documents. Joe Russo was driving across Vegas one day to get the resale docs to drive all the way to the other end of the valley to deliver them and thought there had to be a better way. Luckily for GetDocsNow.com, Al Gore had just invented the internet about the same time that Joe was driving all over Vegas. And his brilliant idea turned into a businesss plan in 1999. We believe that our background in real estate makes our site more functional and user friendly than any other service out there.</p>
+         </div>
+         
+         <div class="content-inner">
+         <p>They started to build an online utility website that provided a variety of document disclosures. The creators of <span><a href="#">GetDocsNow.com</a></span> searched for the best programmers and online engineers to put together this outstanding service. GetDocsNow.com has continued to thrive since its inception and grow and expand into the robust website it is today. We strive to provide the best experience possible for both our clients and our users.</p>
+         </div>
+
+         <div class="content-inner">
+            <p>GetDocsNow.com is owned by <a href="http://wemakebusinessbetter.com/" target="_blank">The Russo Group.</a></p>
+         </div>
+         
+            <!--
+         <div class="content-inner">
+         <p>We are hosted and supported by The <a class="h-link" href="http://wemakebusinessbetter.com/" target="_blank">Russo Group.</a> <span><a href="#">GetDocsNow.com</a></span> has been hosted on The Russo Groups' servers for more than 4 years with no unplanned outages. They provide reliable and secure hosting of our website, as well as help our technology stay current and user friendly. We strive to provide the best experience possible for both our clients and our users.</p>
+         </div>
+            
+         
+         <div class="content-inner">
+         <p>We use <a class="h-link" href="http://www.authorize.net/" target="_blank">Authorize.net</a> to manage our transactions & help prevent fraud. You can have confidence our transactions are being processed according to the highest security standards.</p>
+         </div>
+         
+         <div class="content-inner">
+         <p>It is our commitment to keep expanding and improving the services for the <span><a href="#">GetDocsNow.com</a></span> clients.</p>
+         </div>
+            -->
+        
+
+       </div> 
+   </div>
+		</li>
+
+		<li id="liProducts" data-content="gallery">
+	        <div class="content">
+                <div class="row">
+                    <div class="">
+                      <div class="homecontent">
+                      <h1 class="header-line">Products</h1>
+                      <h3>Not all products are available for every HOA.</h3>
+                      <ul class="p-list">
+                      <li><p>Resale Documents</p><p>Individual Documents</p><p>Full Package</p></li>
+                      <li><p>HOA Certificates / Questionnaires</p><p>Standard Form</p><p>Custom Form</p></li>
+                      <li><p>Escrow Demand Statements/Closing Statements/Estoppels</p></li>
+                      <li><p>Evidence of Insurance Certificates</p></li>
+                      </ul>
+                    
+                    <div class="">
+                      <h1 class="header-line">Integrations and More Features</h1>
+                      <ul class="p-list">
+                      <li><a class="h-link" href="http://www.villagemanagementsoftware.com/" target="_blank">VMS Integration</a></li>
+                      <li><a class="h-link" href="http://www.calibersoftware.com/" target="_blank">Caliber Integration</a></li>
+                      <li><a class="h-link" href="http://www.topssoft.com/" target="_blank">TOPS Integration</a></li>
+                      <li>Document Storage and Distribution</li>
+                      <li>Collection Company Integration</li>
+                      </ul>
+              
+                    </div>
+        </div>
+               </div> 
+           </div>
+           </div>
+		</li>
+
+		<li id="liContact" data-content="settings">
+			<div class="content">
+           <div class="homecontent">
+         <h1 class="header-line">Contact Us</h1>
+         <h3 style="color:gray;">Please see our FAQs Page as most questions can be answered there instantly.
+</h3>
+<h1 style="color:gray;">Select the service we can best provide to you:</h1>
+         
+         <div class="accordion2">
+			<h1 style="color:purple;">CUSTOMER SERVICE & TECHNICAL SUPPORT <img src="images/more-icon.jpg" class="defaultMoreIcon" /></h1>
+			<div>
+				<p>Technical Support for the GetDocsNow.com system may be obtained by:</p>
+                <ul class="p-list">
+                <li>Email: <a href="mailto:CustomerService@getdocsnow.com">CustomerService@getdocsnow.com</a></li>
+                <li>Phone: 800-353-2939</li>
+                </ul>
+                
+                 <p>Please provide the following (if applicable):</p>
+                <ul class="p-list">
+                <li>Login information</li>
+                <li>Order number</li>
+                 <li>Property address and name of HOA</li>
+                <li>Information about the problem you have encountered</li>
+                </ul>
+                </div>
+                
+                <!--
+                <h1>TECHNICAL SUPPORT</h1>
+			<div>
+				<p>Technical Support for the GetDocsNow.com system may be obtained by:</p>
+                <ul>
+                <li>Email: <a href="#">technicalsupport@getdocsnow.com</a></li>
+                <li>Phone: 800-353-2939</li>
+                </ul>
+                
+                 <p>Please provide the following (if applicable):</p>
+                <ul>
+                <li>Login information</li>
+                <li>Order number</li>
+                 <li>Property address and name of HOA</li>
+                <li>Information about the problem you have encountered</li>
+                </ul>
+                </div>-->
+                
+                
+                <h1 style="color:purple;">SALES AND MARKETING <img src="images/more-icon.jpg" class="defaultMoreIcon" /></h1>
+			<div>
+                <div>
+                    <h2>SALES AND MARKETING</h2>
+                </div>
+                <p>Management Firms, Self-Managed Associations, Insurance Companies and HOA Attorneys who wish to use&#160;<strong>Get<span class="purple">Docs</span>Now.com</strong>&#160;and streamline their current document processes may contact the Sales and Marketing Department by:</p>
+                Email: <a href="mailto:sales@getdocsnow.com">sales@getdocsnow.com</a
+                <br /><br />
+                <br />
+                <a href="Information-Request.aspx" class="btn">Click here to get started</a>
+                <br /><br />
+
+                    
+
+
+                <!--
+				<p>Technical Support for the GetDocsNow.com system may be obtained by:</p>
+                <ul>
+                <li>Email: <a href="#">technicalsupport@getdocsnow.com</a></li>
+                <li>Phone: 800-353-2939</li>
+                </ul>
+                
+                 <p>Please provide the following (if applicable):</p>
+                <ul>
+                <li>Login information</li>
+                <li>Order number</li>
+                 <li>Property address and name of HOA</li>
+                <li>Information about the problem you have encountered</li>
+                </ul>-->
+                </div>
+                
+                <br /><br />
+                <a class="btn" href="Information-Request.aspx">CONTACT US FORM</a>
+			<!--<div>
+				<p>Technical Support for the GetDocsNow.com system may be obtained by:</p>
+                <ul>
+                <li>Email: <a href="#">technicalsupport@getdocsnow.com</a></li>
+                <li>Phone: 800-353-2939</li>
+                </ul>
+                
+                 <p>Please provide the following (if applicable):</p>
+                <ul>
+                <li>Login information</li>
+                <li>Order number</li>
+                 <li>Property address and name of HOA</li>
+                <li>Information about the problem you have encountered</li>
+                </ul>
+                </div>-->
+                
+               
+                
+                <script>
+			$(".accordion2").accordion();
+		</script>
+                </div>
+      
+         
+         </div>
+       </div>
+		</li>
+        
+        <li id="liTestimonials" data-content="last">
+			<div class="content">
+   <div class="homecontent last-test">
+         <h1 class="header-line">Testimonials</h1>
+
+         <iframe width="265" height="210" src="https://www.youtube.com/embed/videoseries?list=PLrQx1G9VroXClkhehGs5VjWnyM5xjrA47&amp;hl=en_US" frameborder="0" allowfullscreen="allowfullscreen" style="float:left; padding: 15px 15px 15px 15px;"></iframe>
+       
+         <div class="test-content">
+         <ul class="p-list">
+         <li>
+         <p>"Love the site!!! Wish everyone would use the GetDocsNow.com site!!!!"</p>
+         <div class="name">
+         <p>- Barbara Huscher, </p>
+         <p>   HOA Department, Colorado Title Group</p>
+         </div>
+         </li>
+         
+         <li>
+         <p>"I love you guys. Your customer service is awesome! The other guys don't even answer the phone!"</p>
+         <div class="name">
+         <p>- Karen, Escrow Officer, </p>
+         <p>   NV Title</p>
+         </div>
+         </li>
+         
+<br /><br />             
+         <li>
+         <p>"By the way, your website is so much easier and cleaner than, shall we say, your competitors."</p>
+         <div class="name">
+         <p>- Litsa Peters, Transaction Manager, </p>
+         <p>   Select Realty Group</p>
+         </div>
+         </li>
+         
+         
+         <li>
+         <p>"I will let everyone (HOA Mgmt Co) know that you guys are the best, on top of being user-friendly."</p>
+         <div class="name">
+         <p>- Tami, Office Manager, </p>
+         <p>   Mortgage Company</p>
+         </div>
+         </li>
+         
+         <li>
+         <p>"Using GetDocsNow.com is easier than I could have imagined."</p>
+         <div class="name">
+         <p>- Jermaine Bowen, </p>
+         <p>   President, Unyglobe Management, California</p>
+         </div>
+         </li>
+         
+         <li>
+         <p>"You guys are really awesome. I couldn't have kept going without your company!"</p>
+         <div class="name">
+         <p>- Ghilda Fries, </p>
+         <p>  Owner, G&amp;S Association Services, Maryland &amp; DC</p>
+         </div>
+         </li>
+         
+         <li>
+         <p>
+"Thank you, for being so speedy to assist me with my order. I am thrilled with your customer service response time for my order."</p>
+         <div class="name">
+         <p>- Cathy Warning, </p>
+         <p>   Transaction Coordinator,Realty ONE Group</p>
+         </div>
+         </li>
+         
+         
+         
+         
+         
+         </ul>
+         </div>
+
+       <!--
+               <div style="font-size:200px; font-family:Algerian; color:purple;opacity: 0.5; position:absolute; top:200px; left:420px;">"</div> <!-- (top) postive number moves item down on the screen, (left) positive number moves item right on the screen --> 
+
+
+       </div>
+       </div>
+		</li>
+        
+       
+        
+        
         </div>
         
-      </nav>
-</header>
-<body>
-    
+        
+        
+	</ul> <!-- cd-tabs-content -->
+</div>
+
+
+
+</div>
+</div>
+
+<div class="cta">
+<div class="container">
+<div class="ctatext">
+<div class="left">
+<p>Thank you, for being so speedy to assist me 
+with my order. I am thrilled with your customer 
+service response time for my order.</p>
+<div class="cathy">
+ <h1>-Cathy Warning,<br>
+Transaction Coordinator,Realty ONE Group</h1>
+</div>
+</div>
+</div>
+
+<div class="ctatextt">
+<div class="left">
+<p>I love you guys. Your customer service is awesome! 
+The other guys don't even answer the phone!</p>
+<div class="cathy">
+ <h1>-Cathy Warning,<br>
+Transaction Coordinator,Realty ONE Group</h1></div>
+<div class="see"><a href="javascript:TestimonialClick();">SEE WHAT OTHERS HAVE TO SAY</a></div><!--Default.aspx#TESTIMONIALS-->
+</div>
+
+</div>
+</div>
+
+</div>
+
+
+<div class="footer">
+<div class="container">
+<div class="section">
+<div class="footerlogo">
+<a href="#"><img src="images/logo.png"></a>
+</div>
+<div class="footer@">
+<ul>
+<li>@: <a href="mailto:CustomerService@getdocsnow.com">CustomerService@getdocsnow.com </a></li>
+<li>p: <span><a href="javascript:void();" style="cursor:text;">(800) 353-2939</a></span></li>
+</ul>
+</div>
+
+
+</div>
+
+<div class="section1">
+<h1>GetDocsNow</h1>
+<ul>
+<li><a href="javascript:window.location.href = 'Default.aspx#HOME';selfHyperLinkClick();">HOME</a></li>
+<li><a href="javascript:window.location.href = 'Default.aspx#ABOUT';selfHyperLinkClick();">About</a></li>
+<li><a href="javascript:window.location.href = 'Default.aspx#PRODUCTS';selfHyperLinkClick();">Products</a></li>
+<li><a href="javascript:window.location.href = 'Default.aspx#FAQ';selfHyperLinkClick();">FAQ</a></li>
+<li><a href="javascript:window.location.href = 'Default.aspx#TESTIMONIALS';selfHyperLinkClick();">Testimonials</a></li>
+<li><a href="javascript:window.location.href = 'Default.aspx#CONTACT';selfHyperLinkClick();">Contact</a></li>
+</ul>
+</div>
+
+
+<div class="section1">
+<h1>Contact</h1>
+<p>If you're interested in increased profits and streamline processes for your HOAs, enter your email and a member of 
+our staff will contact you shortly.</p>
+
+    <fieldset>
+
+        <input type="hidden" name="formID" value="73054643368">
+        <input type="hidden" name="enableServerValidation" value="1">
+        <input type="hidden" name="enable303Redirect" value="0"><label for="input_4"> E-mail<span>*</span> </label> 
+        <input type="email" id="input_4" name="q4_email" size="51"><button type="submit" style="white-space:nowrap;">&nbsp;</button>
+        <li style="display:none">Should be Empty: <input type="hidden" name="website" value=""></li>
+        <input type="hidden" id="simple_spc" name="simple_spc" value="73054643368-73054643368">
+
+
+
+        
+        <!--
+        <input type="text" placeholder="Enter Email">
+        <button id="btnContactMeEmail2" onclick="btnContactMeEmailOnClick">
+
+        </button>
+        -->
+    </fieldset>
+
+</div>
+
+
+<div class="visa">
+<div class="doc">
+
+<h1><a href="GetDocsNow.com-W-9.pdf" target="_blank">DOWNLOAD OUR W9 HERE</a></h1>
+</div>
+<div class="visa-icons">
+<img src="images/visa-icons.png" title="GetDocsNow.com accepts Visa, MasterCard and Discover." >
+</div>
+</div>
+
+<div class="copyright">
+<div class="phone">
+<ul>
+<li></li>
+<li>Address: 8675 S. Eastern Avenue, Las Vegas, NV 89123</li>
+</ul>
+</div>
+
+<div class="phone-right">
+<ul>
+<li>Copyright © 1999-2019 GetDocsNow.com - All Rights Reserved</li>
+</ul>
+
+</div>
+
+</div>
+</div>
+
+
+    <div style="display:none; visibility:hidden;">
+        <a href="http://www.getdocsnow.com">GetDocsNow.com Home</a>
+        <li><a href="Default.aspx#ABOUT">About</a></li>
+        <li><a href="Default.aspx#PRODUCTS">Products</a></li>
+        <li><a href="Default.aspx#FAQ">FAQ</a></li>
+        <li><a href="Default.aspx#TESTIMONIALS">Testimonials</a></li>
+        <li><a href="Default.aspx#CONTACT">Contact</a></li>
+    </div>
+
+
+
+
+
+
+
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+
+
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+
+<!--Test Ends -->
+
+
+    </form>
 </body>
 </html>
